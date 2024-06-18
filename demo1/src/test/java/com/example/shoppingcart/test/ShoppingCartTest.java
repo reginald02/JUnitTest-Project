@@ -11,7 +11,7 @@ public class ShoppingCartTest {
     private static Product product1;
     private static Product product2;
     private ShoppingCart cart;
-
+ 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
         product1 = new Product("Laptop", 999.99);
@@ -42,6 +42,14 @@ public class ShoppingCartTest {
     public void testAddProduct() {
         cart.addProduct(product1);
         assertEquals(1, cart.getProductCount());
+        assertEquals(999.99, cart.getTotalPrice(), 0.01);
+        System.out.println("Executed testAddProduct method.");
+    }
+    
+    @Test
+    public void testAddProduct2() {
+        cart.addProduct(product1);
+        assertEquals(2, cart.getProductCount());
         assertEquals(999.99, cart.getTotalPrice(), 0.01);
         System.out.println("Executed testAddProduct method.");
     }
