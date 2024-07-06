@@ -48,7 +48,7 @@ public class ShoppingCartTest {
     
     @Test
     public void testAddProduct2() {
-        cart.addProduct(product1);
+        cart.addProduct(product2);
         assertEquals(1, cart.getProductCount());
         assertEquals(100, cart.getTotalPrice(), 0.01);
         System.out.println("Executed testAddProduct method.");
