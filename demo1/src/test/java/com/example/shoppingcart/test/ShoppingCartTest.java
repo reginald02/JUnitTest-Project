@@ -14,8 +14,8 @@ public class ShoppingCartTest {
  
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
-        product1 = new Product("Laptop", 999.99);
-        product2 = new Product("Smartphone", 599.99);
+        product1 = new Product("Laptop", 100);
+        product2 = new Product("Smartphone", 300);
         System.out.println("Executed once before any test methods in this class.");
     }
 
@@ -42,15 +42,15 @@ public class ShoppingCartTest {
     public void testAddProduct() {
         cart.addProduct(product1);
         assertEquals(1, cart.getProductCount());
-        assertEquals(999.99, cart.getTotalPrice(), 0.01);
+        assertEquals(100, cart.getTotalPrice(), 0.01);
         System.out.println("Executed testAddProduct method.");
     }
     
     @Test
     public void testAddProduct2() {
         cart.addProduct(product1);
-        assertEquals(3, cart.getProductCount());
-        assertEquals(999.99, cart.getTotalPrice(), 0.01);
+        assertEquals(1, cart.getProductCount());
+        assertEquals(100, cart.getTotalPrice(), 0.01);
         System.out.println("Executed testAddProduct method.");
     }
 
@@ -60,7 +60,7 @@ public class ShoppingCartTest {
         cart.addProduct(product2);
         cart.removeProduct(product1);
         assertEquals(1, cart.getProductCount());
-        assertEquals(599.99, cart.getTotalPrice(), 0.01);
+        assertEquals(300, cart.getTotalPrice(), 0.01);
         System.out.println("Executed testRemoveProduct method.");
     }
 
@@ -68,7 +68,7 @@ public class ShoppingCartTest {
     public void testGetTotalPrice() {
         cart.addProduct(product1);
         cart.addProduct(product2);
-        assertEquals(1599.98, cart.getTotalPrice(), 0.01);
+        assertEquals(400, cart.getTotalPrice(), 0.01);
         System.out.println("Executed testGetTotalPrice method.");
     }
 
